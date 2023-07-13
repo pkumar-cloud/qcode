@@ -59,6 +59,13 @@ sudo cp /etc/fstab /etc/fstab.bak
 echo UUID=`blkid -s UUID -o value /dev/xvdh` /var/lib/jenkins/ xfs defaults 0 0 | sudo tee -a /etc/fstab
 mount -a OR sudo reboot
 ```
+## Ref's:
+1. https://github.com/azeezsalu/terraform-tutorial-reference-files/blob/main/jenkins-reference.tf
+ - https://www.youtube.com/watch?v=9XrYwfIWDL0
+
+2. https://medium.com/@raguyazhin/install-jenkins-on-amazon-linux-ec2-instance-using-terraform-1a6bc35bacaa
+
+3. https://aws.plainenglish.io/how-to-install-jenkins-on-an-ec2-with-terraform-70aea24ac6d
 
 ### Future:
 - Create a snapshot of 2nd disk.

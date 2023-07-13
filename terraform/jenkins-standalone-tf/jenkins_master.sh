@@ -8,7 +8,7 @@ sudo yum install jenkins -y
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
 sudo systemctl status jenkins
-#In case want to use master as worker node.
+# Making it work as worker
 sudo yum install git maven docker -y
 sudo service docker start
 sudo chkconfig docker on

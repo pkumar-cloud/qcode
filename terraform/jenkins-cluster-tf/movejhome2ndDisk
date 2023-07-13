@@ -1,0 +1,26 @@
+lsblk
+sudo file -s /dev/xvdh #If the above command output shows “/dev/xvdh: data“, it means your volume is empty.
+sudo mkfs -t ext4 /dev/xvdh
+OR
+sudo mkfs -t xfs /dev/xvdh
+sudo mkdir /mnt/tmp
+sudo mount /dev/xvdh /mnt/tmp
+sudo rsync -avx /var/lib/jenkins/ /mnt/tmp
+cd /mnt/tmp; ls -l #check content
+sudo mount /dev/xvdh /var/lib/jenkins 
+ls -l /var/lib/jenkins #check content
+sudo umount /var/lib/jenkins
+sudo rm -rf /var/lib/jenkins #delete old location
+
+sudo mkdir /var/lib/jenkins/
+sudo mount /dev/xvdh /var/lib/jenkins/
+ls -l /var/lib/jenkins
+sudo umount /mnt/tmp
+df -h
+
+sudo cp /etc/fstab /etc/fstab.bak
+
+#echo UUID=`blkid -s UUID -o value $DISK` /var/lib/jenkins/ ${DISK_TYPE} nofail,noatime,defaults,nodev 0 2 | tee -a /etc/fstab
+
+echo UUID=`blkid -s UUID -o value /dev/xvdh` /var/lib/jenkins/ xfs defaults 0 0 | sudo tee -a /etc/fstab
+mount -a OR sudo reboot

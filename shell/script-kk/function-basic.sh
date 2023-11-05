@@ -9,7 +9,7 @@ prepare-directory-structure
 
 # add two numbers
 function add(){
-  sum=$(( $1 + $2 ))
+  sum=$(( $1 + $2 )) # $1:param1, $2:param2
   echo $sum #returns the value from function 
 }
 result=$(add 3 5)

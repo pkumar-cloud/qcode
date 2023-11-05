@@ -100,6 +100,8 @@ sudo firewall-cmd --list-all
 Change `DirectoryIndex index.html` to `DirectoryIndex index.php` to make the php page the default page
 
 ```
+sudo vi /etc/httpd/conf/httpd.conf
+OR
 sudo sed -i 's/index.html/index.php/g' /etc/httpd/conf/httpd.conf
 ```
 
@@ -121,7 +123,7 @@ sudo git clone https://github.com/<application>.git /var/www/html/
 
 5. Update index.php
 
-Update [index.php](https://github.com/kodekloudhub/learning-app-ecommerce/blob/13b6e9ddc867eff30368c7e4f013164a85e2dccb/index.php#L107) file to connect to the right database server. In this case `localhost` since the database is on the same server.
+Update [index.php](https://github.com/pkumar-cloud/qcode/blob/main/shell/script-kk/learning-app-ecommerce/index.php#L107) file to connect to the right database server. In this case `localhost` since the database is on the same server.
 
 ```
 sudo sed -i 's/172.20.1.101/localhost/g' /var/www/html/index.php

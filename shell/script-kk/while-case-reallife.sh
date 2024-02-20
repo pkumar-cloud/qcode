@@ -19,8 +19,7 @@ fi
 done
 
 #------OR---------------
-while true
-do
+while true; do
   echo "1. Shutdown"
   echo "2. Restart"
   echo "3. Exit Menu"
